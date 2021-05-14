@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 require("dotenv").config({ path: "./.env" });
 
-const topalovic = ["iva topalović", "iva topalovic", "topalovic", "topalović"];
+const topalovic = ["topalovic", "topalović", "topa"];
 
 const poruke = [
   "https://www.wikihow.com/Overcome-Depression",
