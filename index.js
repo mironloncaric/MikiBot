@@ -23,7 +23,7 @@ client.on("message", (msg) => {
   });
   if (uvijet) {
     msg.channel.send(
-      `@X-AE-A-293, \n ${poruke[Math.floor(Math.random() * poruke.length)]}`
+      `@X-Æ-A-293, \n ${poruke[Math.floor(Math.random() * poruke.length)]}`
     );
   }
 });
