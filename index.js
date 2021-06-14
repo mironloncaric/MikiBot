@@ -3,7 +3,8 @@ const client = new Discord.Client();
 
 require("dotenv").config({ path: "./.env" });
 
-const topalovic = ["topalovic", "topalović", "topa"];
+const topa = /t+h*o+p+[aeiou]/i;
+const iva = /\bi+v+[aeiou]\b/;
 
 const poruke = [
   "https://www.wikihow.com/Overcome-Depression",
@@ -18,12 +19,15 @@ client.on("ready", () => {
 client.on("message", (msg) => {
   const content = msg.content;
   var uvijet = false;
-  topalovic.forEach((item) => {
-    if (content.toLowerCase().includes(item)) uvijet = true;
-  });
-  if (uvijet) {
+  if (topa.test(content)){
+    if(msg.author.bot == false)
+      msg.channel.send(
+        `@X-Æ-A-293, \n ${poruke[Math.floor(Math.random() * poruke.length)]}`
+      );
+  }
+  if (iva.test(content)){
     msg.channel.send(
-      `@X-Æ-A-293, \n ${poruke[Math.floor(Math.random() * poruke.length)]}`
+      `Topalovic? R.I.P.`
     );
   }
 });
